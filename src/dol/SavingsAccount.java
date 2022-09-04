@@ -8,16 +8,22 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 		super();
 	}
 
-	public SavingsAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, String holderID, int telephoneNumber,
-			String holderDepartment, String holderMunicipality, String holderNeighborhood, String exactAdddress,
-			Date creationDate, String currency) {
-		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, holderID,
-				telephoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAdddress, creationDate,
-				currency);
-	}
 
 	
+	
+	public SavingsAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
+			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
+			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
+			String exactAdddress, Date creationDate, String currency, String transactionHistory) {
+		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, holderID,
+				landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAdddress,
+				creationDate, currency, transactionHistory);
+		
+	}
+
+
+
+
 	@Override
 	public double getBalance() {
 		// TODO Auto-generated method stub
@@ -127,15 +133,28 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	}
 
 	@Override
-	public int getTelephoneNumber() {
+	public int getLandlinePhoneNumber() {
 		// TODO Auto-generated method stub
-		return super.getTelephoneNumber();
+		return super.getLandlinePhoneNumber();
+	}
+
+
+	@Override
+	public void setLandlinePhoneNumber(int landlinePhoneNumber) {
+		// TODO Auto-generated method stub
+		super.setLandlinePhoneNumber(landlinePhoneNumber);
 	}
 
 	@Override
-	public void setTelephoneNumber(int telephoneNumber) {
+	public int getMobilPhoneNumber() {
 		// TODO Auto-generated method stub
-		super.setTelephoneNumber(telephoneNumber);
+		return super.getMobilPhoneNumber();
+	}
+
+	@Override
+	public void setMobilPhoneNumber(int mobilPhoneNumber) {
+		// TODO Auto-generated method stub
+		super.setMobilPhoneNumber(mobilPhoneNumber);
 	}
 
 	@Override
@@ -197,6 +216,11 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 		// TODO Auto-generated method stub
 		super.setTransactionHistory(transactionHistory);
 	}
+
+	 	
+
+	
+	
 
 	@Override
 	public void withdrawMoney() {

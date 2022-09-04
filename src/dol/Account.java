@@ -18,14 +18,17 @@ public abstract class Account {
 	//Cédula del titular de la cuenta.
 	private String holderID;
 	
-	//Número de contacto.
-	private int telephoneNumber;
+	//Número de contacto linea fija
+	private int landlinePhoneNumber;
+	
+	//número de contacto movil.
+	private int mobilPhoneNumber;
 	
 	//Direción del titular.
-	private String holderDepartment;
-	private String holderMunicipality;
-	private String holderNeighborhood;
-	private String exactAdddress;
+	private String holderDepartment; //Departamento
+	private String holderMunicipality; //Municipio
+	private String holderNeighborhood; //Barrio
+	private String exactAdddress; //Direccion exacta.
 	
 	//Fecha de creacion de la cuenta.
 	private Date creationDate;
@@ -43,12 +46,10 @@ public abstract class Account {
 	}
 
 
-	
-	
 	public Account(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, String holderID, int telephoneNumber,
-			String holderDepartment, String holderMunicipality, String holderNeighborhood, String exactAdddress,
-			Date creationDate, String currency) {
+			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
+			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
+			String exactAdddress, Date creationDate, String currency, String transactionHistory) {
 		super();
 		this.balance = balance;
 		this.accountNumber = accountNumber;
@@ -57,14 +58,21 @@ public abstract class Account {
 		this.holderSurname = holderSurname;
 		this.holderSecondSurname = holderSecondSurname;
 		this.holderID = holderID;
-		this.telephoneNumber = telephoneNumber;
+		this.landlinePhoneNumber = landlinePhoneNumber;
+		this.mobilPhoneNumber = mobilPhoneNumber;
 		this.holderDepartment = holderDepartment;
 		this.holderMunicipality = holderMunicipality;
 		this.holderNeighborhood = holderNeighborhood;
 		this.exactAdddress = exactAdddress;
 		this.creationDate = creationDate;
 		this.currency = currency;
+		this.transactionHistory = transactionHistory;
 	}
+
+
+
+
+
 
 
 
@@ -141,13 +149,6 @@ public abstract class Account {
 		this.currency = currency;
 	}
 
-	public int getTelephoneNumber() {
-		return telephoneNumber;
-	}
-
-	public void setTelephoneNumber(int telephoneNumber) {
-		this.telephoneNumber = telephoneNumber;
-	}
 
     public String getHolderDepartment() {
 		return holderDepartment;
@@ -170,8 +171,25 @@ public abstract class Account {
 	public String getExactAdddress() {
 		return exactAdddress;
 	}
+	
+	public int getLandlinePhoneNumber() {
+		return landlinePhoneNumber;
+	}
 
 
+	public void setLandlinePhoneNumber(int landlinePhoneNumber) {
+		this.landlinePhoneNumber = landlinePhoneNumber;
+	}
+
+
+	public int getMobilPhoneNumber() {
+		return mobilPhoneNumber;
+	}
+
+
+	public void setMobilPhoneNumber(int mobilPhoneNumber) {
+		this.mobilPhoneNumber = mobilPhoneNumber;
+	}
 
 
 	public void setExactAdddress(String exactAdddress) {

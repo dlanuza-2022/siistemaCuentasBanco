@@ -8,23 +8,25 @@ public class CurrentAccount extends Account implements IAccount {
 		super();
 	}
 
-	//Creo que falta un metodo.
+	//Creo que falta un metodo constructor.
 	
-	public CurrentAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, String holderID, int telephoneNumber,
-			String holderDepartment, String holderMunicipality, String holderNeighborhood, String exactAdddress,
-			Date creationDate, String currency) {
-		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, holderID,
-				telephoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAdddress, creationDate,
-				currency);
-	}
 
+	public CurrentAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
+			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
+			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
+			String exactAdddress, Date creationDate, String currency, String transactionHistory) {
+		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, holderID,
+				landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAdddress,
+				creationDate, currency, transactionHistory);
+	}
+	
 
 
 	@Override
 	public double getBalance() {
 		return super.getBalance();
 	}
+
 
 	@Override
 	public void setBalance(double balance) {
@@ -111,31 +113,42 @@ public class CurrentAccount extends Account implements IAccount {
 		super.setCurrency(currency);
 	}
 
+		
 	@Override
-	public int getTelephoneNumber() {
-		return super.getTelephoneNumber();
+	public int getLandlinePhoneNumber() {
+		// TODO Auto-generated method stub
+		return super.getLandlinePhoneNumber();
 	}
 
 	@Override
-	public void setTelephoneNumber(int telephoneNumber) {
-		super.setTelephoneNumber(telephoneNumber);
+	public void setLandlinePhoneNumber(int landlinePhoneNumber) {
+		// TODO Auto-generated method stub
+		super.setLandlinePhoneNumber(landlinePhoneNumber);
 	}
 
-	
+	@Override
+	public int getMobilPhoneNumber() {
+		// TODO Auto-generated method stub
+		return super.getMobilPhoneNumber();
+	}
+
+	@Override
+	public void setMobilPhoneNumber(int mobilPhoneNumber) {
+		// TODO Auto-generated method stub
+		super.setMobilPhoneNumber(mobilPhoneNumber);
+	}
+
 	@Override
 	public String getHolderDepartment() {
 		// TODO Auto-generated method stub
 		return super.getHolderDepartment();
 	}
 
-
-
 	@Override
 	public void setHolderDepartment(String holderDepartment) {
 		// TODO Auto-generated method stub
 		super.setHolderDepartment(holderDepartment);
 	}
-
 
 
 	@Override
