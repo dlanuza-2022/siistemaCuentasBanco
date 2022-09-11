@@ -1,5 +1,7 @@
 package dol;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public abstract class Account {
@@ -28,13 +30,14 @@ public abstract class Account {
 	private String holderDepartment; //Departamento
 	private String holderMunicipality; //Municipio
 	private String holderNeighborhood; //Barrio
-	private String exactAdddress; //Direccion exacta.
+	private String exactAddress; //Direccion exacta.
 	
 	//Fecha de creacion de la cuenta.
-	private Date creationDate;
+	private LocalDateTime creationDate;
+	
 	
 	//Tipo de moneda utilizada en la cuenta (Dólares o Córdobas).
-	private String currency;
+	private Currency currency;
 	
 	//Historial de transacciones de la cuenta.
 	private String transactionHistory;
@@ -49,7 +52,7 @@ public abstract class Account {
 	public Account(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
 			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
 			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
-			String exactAdddress, Date creationDate, String currency, String transactionHistory) {
+			String exactAdddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
 		super();
 		this.balance = balance;
 		this.accountNumber = accountNumber;
@@ -63,7 +66,7 @@ public abstract class Account {
 		this.holderDepartment = holderDepartment;
 		this.holderMunicipality = holderMunicipality;
 		this.holderNeighborhood = holderNeighborhood;
-		this.exactAdddress = exactAdddress;
+		this.exactAddress = exactAdddress;
 		this.creationDate = creationDate;
 		this.currency = currency;
 		this.transactionHistory = transactionHistory;
@@ -133,19 +136,19 @@ public abstract class Account {
 		this.holderID = holderID;
 	}
 
-	public Date getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(LocalDateTime creationDate) {
 		this.creationDate = creationDate;
 	}
 
-	public String getCurrency() {
+	public Currency getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(String currency) {
+	public void setCurrency(Currency currency) {
 		this.currency = currency;
 	}
 
@@ -168,8 +171,8 @@ public abstract class Account {
 	public void setHolderNeighborhood(String holderNeighborhood) {
 		this.holderNeighborhood = holderNeighborhood;
 	}
-	public String getExactAdddress() {
-		return exactAdddress;
+	public String getExactAddress() {
+		return exactAddress;
 	}
 	
 	public int getLandlinePhoneNumber() {
@@ -191,9 +194,8 @@ public abstract class Account {
 		this.mobilPhoneNumber = mobilPhoneNumber;
 	}
 
-
-	public void setExactAdddress(String exactAdddress) {
-		this.exactAdddress = exactAdddress;
+	public void setExactAddress(String exactAdddress) {
+		this.exactAddress = exactAdddress;
 	}
 
 

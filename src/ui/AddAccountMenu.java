@@ -2,9 +2,13 @@ package ui;
 
 import java.util.Scanner;
 
+import bll.Application;
+
 public class AddAccountMenu implements IMenu {
     Scanner sc = new Scanner(System.in);
-	
+	FormAccount fa = new FormAccount();
+    
+    
 	@Override
 	public void show() {
 		short op = 0;
@@ -17,9 +21,19 @@ public class AddAccountMenu implements IMenu {
 
 			switch(op) {
 			case 1:
+				System.out.println("__________________________________\n");
+				System.out.println("===Agregar una cuenta corriente===");
+				System.out.println("__________________________________\n");
+				
+				Application.catchCurrentAccount();
 				
 				break;
 			case 2:
+				System.out.println("___________________________________\n");
+				System.out.println("===Agregar una cuenta de ahorros===");
+				System.out.println("___________________________________\n");
+				
+				Application.catchSavingsAccount();
 				
 				break;
 			case 3:

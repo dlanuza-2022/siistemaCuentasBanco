@@ -1,8 +1,11 @@
 package dol;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
-public class SavingsAccount extends Account implements IAccount, ISavingsAccount {
+import misc.DateOperator;
+
+public class SavingsAccount extends Account implements IAccount, ISavingsAccount, Comparable<SavingsAccount>{
 
 	public SavingsAccount() {
 		super();
@@ -14,9 +17,9 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	public SavingsAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
 			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
 			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
-			String exactAdddress, Date creationDate, String currency, String transactionHistory) {
+			String exactAddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
 		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, holderID,
-				landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAdddress,
+				landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAddress,
 				creationDate, currency, transactionHistory);
 		
 	}
@@ -109,25 +112,25 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	}
 
 	@Override
-	public Date getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		// TODO Auto-generated method stub
 		return super.getCreationDate();
 	}
 
 	@Override
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(LocalDateTime CreationDate) {
 		// TODO Auto-generated method stub
-		super.setCreationDate(creationDate);
+		super.setCreationDate(CreationDate);
 	}
 
 	@Override
-	public String getCurrency() {
+	public Currency getCurrency() {
 		// TODO Auto-generated method stub
 		return super.getCurrency();
 	}
 
 	@Override
-	public void setCurrency(String currency) {
+	public void setCurrency(Currency currency) {
 		// TODO Auto-generated method stub
 		super.setCurrency(currency);
 	}
@@ -194,15 +197,15 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	}
 
 	@Override
-	public String getExactAdddress() {
+	public String getExactAddress() {
 		// TODO Auto-generated method stub
-		return super.getExactAdddress();
+		return super.getExactAddress();
 	}
 
 	@Override
-	public void setExactAdddress(String exactAdddress) {
+	public void setExactAddress(String exactAdddress) {
 		// TODO Auto-generated method stub
-		super.setExactAdddress(exactAdddress);
+		super.setExactAddress(exactAdddress);
 	}
 
 	@Override
@@ -221,6 +224,11 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 
 	
 	
+	
+	
+	
+	//Metodos especiales
+	
 
 	@Override
 	public void withdrawMoney() {
@@ -238,15 +246,64 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	
 	@Override
 	public void showDataAsRow() {
-		// TODO Auto-generated method stub
+		System.out.printf("\n%d %s Fecha de creación de la cuenta: %D Balance: %f Titular: %s %s %s %s Cédula del titular: %s Número de telefono fijo: %d Número de teléfono móvil: %d Dirreción del titular: %s, %s, Barrio %s, %s\n",
+				getAccountNumber(),
+				getCurrency(),
+				getCreationDate(),
+				getBalance(),
+				getHolderFirstName(),
+				getHolderMiddleName(),
+				getHolderSurname(),
+				getHolderSecondSurname(),
+				getHolderID(),
+				getLandlinePhoneNumber(),
+				getMobilPhoneNumber(),
+				getHolderDepartment(),
+				getHolderMunicipality(),
+				getHolderNeighborhood(),
+				getExactAddress()
+				);
+		System.out.println("_______________________________________________________________________________________");
+		
 		
 	}
 
 	@Override
 	public void showDataAsForm() {
-		// TODO Auto-generated method stub
+		System.out.printf("\nNúmero de cuenta: %s", getAccountNumber());
+		System.out.printf("\nTipo de moneda: %s", getCurrency());
+		System.out.printf("\nFecha de creación de la cuenta: %s", getCreationDate());
+		System.out.printf("\nBalance de la cuenta: %s", getBalance());
+		System.out.printf("\nPrimer nombre del titular: %s", getHolderFirstName());
+		System.out.printf("\nSegundo nombre del titular: %s", getHolderMiddleName());
+		System.out.printf("\nPrimer apellido del titular: %s", getHolderSurname());
+		System.out.printf("\nSegundo apellido del titular: %s", getHolderSecondSurname());
+		System.out.printf("\nMCédula de indentificación del titular: %s", getHolderID());
+		System.out.printf("\nNúmero telefónico de linea fija: %s", getLandlinePhoneNumber());
+		System.out.printf("\nNúmero de teléfono móvil: %s", getMobilPhoneNumber());
+		System.out.printf("\nDepartamento del titular: %s", getHolderDepartment());
+		System.out.printf("\nMunicipio del titular: %s", getHolderMunicipality());
+		System.out.printf("\nBarrio del titular: %s", getHolderNeighborhood());
+		System.out.printf("\nDirreción exacta: %s", getExactAddress());
+	}
+
+
+	@Override
+	public int compareTo(SavingsAccount o) {
+				
+		if(o.getAccountNumber()>this.getAccountNumber()) {
+			return -1;
+	
+		}else if(o.getAccountNumber()==getAccountNumber()){
+			return 0;
+		
+		}else {
+			return 1;
+		}
 		
 	}
+	
+	
 		
 	
 	

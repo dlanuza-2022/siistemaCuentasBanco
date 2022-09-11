@@ -7,11 +7,20 @@ public class Catalog {
 	private String bankName;
 	private List<CurrentAccount> currentAccounts;
 	private List<SavingsAccount> savingsAccounts;
+	private 
 	
-	
-	public Catalog() {
+	public Catalog () {
 		currentAccounts = new ArrayList<CurrentAccount>();
 		savingsAccounts = new ArrayList<SavingsAccount>();
+	}
+	
+	
+	public Catalog(String bankName) {
+		super();
+		this.bankName = bankName;
+		currentAccounts = new ArrayList<CurrentAccount>();
+		savingsAccounts = new ArrayList<SavingsAccount>();
+		
 	}
 
 
@@ -22,11 +31,6 @@ public class Catalog {
 		this.savingsAccounts = savingsAccounts;
 	}
 
-
-	public Catalog(String bankName) {
-		super();
-		this.bankName = bankName;
-	}
 
 
 	public String getBankName() {
@@ -66,6 +70,11 @@ public class Catalog {
 	public void addCurrentAccount(CurrentAccount ca) {
 		this.currentAccounts.add(ca);
 	}
+	
+	
+	
+	
+	
 	
 	
 	//metodo para mostrar todas las cuentas.
