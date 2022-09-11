@@ -55,9 +55,10 @@ public class Menu implements IMenu {
 		System.out.println("1. Depositar o retirar dinero.");
 		System.out.println("2. Agregar una nueva cuenta.");
 		System.out.println("3. Mostrar cuentas.");
-		System.out.println("4. Editar o eliminar una cuenta.");
-		System.out.println("5. Agregar interes a las cuentas de ahorro.");
-		System.out.println("6. Salir del programa.");
+		System.out.println("4. Ordenar cuentas por número de cuenta.");
+		System.out.println("5. Editar o eliminar una cuenta.");
+		System.out.println("6. Agregar interes a las cuentas de ahorro.");
+		System.out.println("7. Salir del programa.");
 		
 	}
 	

@@ -11,6 +11,9 @@ import dol.CurrentAccount;
 
 public class FormAccount {
 	
+	/*
+	 * Clase donde se atrapan los datos de las nuevas cuentas.
+	 */
 	
 	Scanner sc = new Scanner(System.in);
 	ExceptionScanner es = new ExceptionScanner();

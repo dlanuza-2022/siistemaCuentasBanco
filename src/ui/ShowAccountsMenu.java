@@ -49,7 +49,7 @@ Scanner sc = new Scanner(System.in);
 		System.out.println("2. Mostrar las cuentas corrientes.");
 		System.out.println("3. Mostrar las cuentas de ahorro.");
 		System.out.println("4. Buscar cuenta por medio de un número de cuenta.");
-		System.out.println("5. Volver al meú principal.");
+		System.out.println("5. Volver al menú principal.");
 		
 	}
 	
