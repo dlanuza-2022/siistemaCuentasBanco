@@ -232,8 +232,21 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 
 	@Override
 	public void withdrawMoney (double amount) {
-	
-		setBalance(getBalance() - amount);
+	    
+		double tempBalance = getBalance();
+		
+		tempBalance = tempBalance - amount;
+		
+		if(tempBalance < 0) {
+			
+			System.out.println("Fondos insuficientes.");
+		}else {
+			
+			setBalance(getBalance() - amount);
+		}
+		
+		
+		
 		
 		/*
 		 * Hay que agregar una forma de agregar la transaccion al historial de transacciones.
@@ -249,6 +262,55 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 		
 	}
 
+	
+	public void lowBalanceFee(){
+				
+		if(getCurrency() == Currency.CORDOVAS) {
+			
+			if(getBalance() < 1000) {
+				
+				if(getBalance() < LOW_BALANCE_FEE_CORDOVAS) {
+					
+					setBalance(0);
+					
+				}else {
+					
+					setBalance(getBalance() - LOW_BALANCE_FEE_CORDOVAS);
+				}
+				
+		}else {
+			
+			if(getBalance() < 100) {
+				
+				if(getBalance() < LOW_BALANCE_FEE_DOLARS) {
+					
+					setBalance(0);
+					
+				}else {
+					
+					setBalance(getBalance() - LOW_BALANCE_FEE_DOLARS);
+				}
+				
+			}
+			
+		}
+			
+		}
+		
+	}
+	
+	
+	public void addInterest() {
+		//Necesito agregar varias fecha como constante y luego comparar la fecha de hoy.
+		
+		if(getCurrency() == Currency.CORDOVAS) {
+			
+		}else {
+			
+		}
+		
+	}
+	
 	
 	
 	@Override

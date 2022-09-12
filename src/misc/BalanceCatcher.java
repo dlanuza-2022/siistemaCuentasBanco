@@ -13,18 +13,30 @@ public class BalanceCatcher {
 		long wholePart = 0;
 		double cents = 0;
 		
+		
 		do {
-			System.out.print("Monto de la parte entera: ");
 			
-			try {
-				wholePart = sc.nextLong();
+			do {
+				System.out.print("Monto de la parte entera: ");
 				
-			}catch(IllegalArgumentException e) {
+				try {
+					wholePart = sc.nextLong();
+					
+				}catch(IllegalArgumentException e) {
+					
+				System.out.println("Error. Favor de ingresar un valor entero.");	
+				}		
 				
-			System.out.println("Error. Favor de ingresar un valor entero.");	
-			}		
+			}while(wholePart == 0);
 			
-		}while(wholePart == 0);
+			
+			if(wholePart <= 0) {
+				System.out.println("El monto no puede ser menor que 1.");
+			}
+			
+		}while(wholePart <= 0);
+		
+		
 		
 		
 		do {

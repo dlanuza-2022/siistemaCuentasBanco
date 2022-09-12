@@ -230,13 +230,24 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 
 	@Override
 	public void withdrawMoney(double amount) {
-		// TODO Auto-generated method stub
+        double tempBalance = getBalance();
+		
+		tempBalance = tempBalance - amount;
+		
+		if(tempBalance < 0) {
+			
+			System.out.println("Fondos insuficientes.");
+		}else {
+			
+			setBalance(getBalance() - amount);
+		}
 		
 	}
 
 	@Override
 	public void depositMoney(double amount) {
-		// TODO Auto-generated method stub
+
+		setBalance(getBalance() + amount);
 		
 	}
 
