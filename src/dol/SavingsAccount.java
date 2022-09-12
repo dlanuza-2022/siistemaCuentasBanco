@@ -231,15 +231,22 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	
 
 	@Override
-	public void withdrawMoney() {
-		// TODO Auto-generated method stub
-		super.withdrawMoney();
+	public void withdrawMoney (double amount) {
+	
+		setBalance(getBalance() - amount);
+		
+		/*
+		 * Hay que agregar una forma de agregar la transaccion al historial de transacciones.
+		*/
+		
 	}
 
 	@Override
-	public void depositMoney() {
-		// TODO Auto-generated method stub
-		super.depositMoney();
+	public void depositMoney(double amount) {
+		
+		
+		setBalance(getBalance() + amount);
+		
 	}
 
 	

@@ -4,6 +4,8 @@ import dol.SavingsAccount;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
+
+import misc.BalanceCatcher;
 import misc.ExceptionScanner;
 import dol.Currency;
 import dol.CurrentAccount;
@@ -17,7 +19,7 @@ public class FormAccount {
 	
 	Scanner sc = new Scanner(System.in);
 	ExceptionScanner es = new ExceptionScanner();
-	
+	BalanceCatcher bc = new BalanceCatcher();
 	
 	
 	
@@ -95,6 +97,7 @@ public class FormAccount {
 	public SavingsAccount catchSavingsAccount() {
 		SavingsAccount sa = new SavingsAccount();
 		short op = 0;
+		boolean correctBalance = false;
 		
 		do {
 			System.out.println();
@@ -152,6 +155,36 @@ public class FormAccount {
 		
 		System.out.print("Dirección exacta: ");
 		sa.setExactAddress(sc.nextLine());
+		
+		do {
+			
+			System.out.print("Primer depósito: ");
+			sa.depositMoney(bc.catchAmount());
+			
+			if(sa.getCurrency() == Currency.CORDOVAS ) {
+				
+				if(sa.getBalance()>1000) {
+					correctBalance = true;
+				}
+				
+			}else if(sa.getCurrency() == Currency.DOLARS) {
+				
+				if(sa.getBalance()>100) {
+					correctBalance = true;
+				}
+				
+			}
+			
+			
+			
+			if(correctBalance == false) {
+				System.out.println("Monto incorrecto.");
+				System.out.println("El monto mínimo es de C$1000 o $100.");
+			}
+			
+		}while(correctBalance == false);
+		System.out.print("Primer depósito: ");
+		
 		
 		sa.setCreationDate(LocalDateTime.now());
 		

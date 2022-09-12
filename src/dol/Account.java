@@ -229,15 +229,9 @@ public abstract class Account {
 	
 	
 
-	public void withdrawMoney() {
+	public abstract void withdrawMoney(double amount);
 		
-		
-	};
-	
-	public void depositMoney() {
-		
-		
-	};
+	public abstract void depositMoney(double amount);
 	
 	
 	

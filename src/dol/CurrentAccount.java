@@ -229,13 +229,13 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 	
 
 	@Override
-	public void withdrawMoney() {
+	public void withdrawMoney(double amount) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void depositMoney() {
+	public void depositMoney(double amount) {
 		// TODO Auto-generated method stub
 		
 	}

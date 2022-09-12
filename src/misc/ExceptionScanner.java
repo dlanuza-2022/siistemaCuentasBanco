@@ -26,20 +26,7 @@ public class ExceptionScanner {
 		return output;	
 	}
 	
-	public float catchValidCents() {
-		float output = 0;
-		
-		do {
-			System.out.print("Monto de los centavos: ");
-			output = sc.nextFloat();
-			if(output<0 || output > 0.99) {
-				System.out.println("Monto de centavos inválido.");
-			}
-		
-		}while(output<0 || output > 0.99);
-		
-		return output;
-	}
+	
 	
 	public int catchValidMobilePhoneNumber() {
 		int output = 0;
