@@ -8,6 +8,8 @@ public class BalanceCatcher {
 	
 	//Obtener un balance correcto.
 	
+	//Debo convertir los misc a staticos para ahorrar memoria.
+	
 	public double catchAmount() {
 		double amount = 0;
 		long wholePart = 0;
