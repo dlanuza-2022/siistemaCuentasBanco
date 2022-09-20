@@ -51,9 +51,9 @@ public class AddAccountMenu implements IMenu {
 
 	@Override
 	public void displayOptions() {
-		System.out.println("Agregar nueva cuenta corriente.");
-		System.out.println("Agregar nueva cuenta de ahorros.");
-		System.out.println("Volver al menú principal.");
+		System.out.println("1. Agregar nueva cuenta corriente.");
+		System.out.println("2. Agregar nueva cuenta de ahorros.");
+		System.out.println("3. Volver al menú principal.");
 	
 	}
 
