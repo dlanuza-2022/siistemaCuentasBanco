@@ -17,6 +17,9 @@ public abstract class Account {
 	private String holderSurname;
 	private String holderSecondSurname;
 	
+	//Fecha de nacimiento del titular
+	private Date birthDate;
+	
 	//Cédula del titular de la cuenta.
 	private String holderID;
 	
@@ -49,10 +52,20 @@ public abstract class Account {
 	}
 
 
+	
+
+
+
+
+
+
+
+
+
 	public Account(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
+			String holderSurname, String holderSecondSurname, Date birthDate, String holderID, int landlinePhoneNumber,
 			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
-			String exactAdddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
+			String exactAddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
 		super();
 		this.balance = balance;
 		this.accountNumber = accountNumber;
@@ -60,24 +73,26 @@ public abstract class Account {
 		this.holderMiddleName = holderMiddleName;
 		this.holderSurname = holderSurname;
 		this.holderSecondSurname = holderSecondSurname;
+		this.birthDate = birthDate;
 		this.holderID = holderID;
 		this.landlinePhoneNumber = landlinePhoneNumber;
 		this.mobilPhoneNumber = mobilPhoneNumber;
 		this.holderDepartment = holderDepartment;
 		this.holderMunicipality = holderMunicipality;
 		this.holderNeighborhood = holderNeighborhood;
-		this.exactAddress = exactAdddress;
+		this.exactAddress = exactAddress;
 		this.creationDate = creationDate;
 		this.currency = currency;
 		this.transactionHistory = transactionHistory;
 	}
 
+	public Date getBirthDate() {
+		return birthDate;
+	}
 
-
-
-
-
-
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
 
 
 	public double getBalance() {

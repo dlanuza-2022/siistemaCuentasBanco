@@ -3,6 +3,8 @@ package dol;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import misc.DateOperator;
+
 public class CurrentAccount extends Account implements IAccount, Comparable<CurrentAccount> {
 	
 	public CurrentAccount() {
@@ -13,24 +15,43 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 	
 	
 	
-	
-
 	public CurrentAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, String holderID, int landlinePhoneNumber,
+			String holderSurname, String holderSecondSurname, Date birthDate, String holderID, int landlinePhoneNumber,
 			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
-			String exactAdddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
-		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, holderID,
-				landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood, exactAdddress,
-				creationDate, currency, transactionHistory);
+			String exactAddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
+		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, birthDate,
+				holderID, landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood,
+				exactAddress, creationDate, currency, transactionHistory);
+		// TODO Auto-generated constructor stub
 	}
 	
 
+	
+	
+	
+	
+	
+	
+
+	@Override
+	public Date getBirthDate() {
+		// TODO Auto-generated method stub
+		return super.getBirthDate();
+	}
+
+	@Override
+	public void setBirthDate(Date birthDate) {
+		// TODO Auto-generated method stub
+		super.setBirthDate(birthDate);
+	}
 
 	@Override
 	public double getBalance() {
 		return super.getBalance();
 	}
 
+
+	
 
 	@Override
 	public void setBalance(double balance) {
@@ -253,7 +274,7 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 
 	@Override
 	public void showDataAsRow() {
-		System.out.printf("\n%d %s Fecha de creación de la cuenta: %D Balance: %f Titular: %s %s %s %s Cédula del titular: %s Número de telefono fijo: %d Número de teléfono móvil: %d Dirreción del titular: %s, %s, Barrio %s, %s\n",
+		System.out.printf("\n%d %s Fecha de creación de la cuenta: %D Balance: %f Titular: %s %s %s %s Fecha de nacimiento: %s Cédula del titular: %s Número de telefono fijo: %d Número de teléfono móvil: %d Dirreción del titular: %s, %s, Barrio %s, %s\n",
 				getAccountNumber(),
 				getCurrency(),
 				getCreationDate(),
@@ -262,6 +283,7 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 				getHolderMiddleName(),
 				getHolderSurname(),
 				getHolderSecondSurname(),
+				DateOperator.dateToString(getBirthDate(), "dd/MM/yyyy"),
 				getHolderID(),
 				getLandlinePhoneNumber(),
 				getMobilPhoneNumber(),
@@ -269,7 +291,6 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 				getHolderMunicipality(),
 				getHolderNeighborhood(),
 				getExactAddress()
-				
 				);
 		System.out.println("_______________________________________________________________________________________");
 		
@@ -285,6 +306,7 @@ public class CurrentAccount extends Account implements IAccount, Comparable<Curr
 		System.out.printf("\nSegundo nombre del titular: %s", getHolderMiddleName());
 		System.out.printf("\nPrimer apellido del titular: %s", getHolderSurname());
 		System.out.printf("\nSegundo apellido del titular: %s", getHolderSecondSurname());
+		System.out.printf("\nFecha de nacimiento del titular: %s", DateOperator.dateToString(getBirthDate(), "dd/MM/yyyy"));
 		System.out.printf("\nMCédula de indentificación del titular: %s", getHolderID());
 		System.out.printf("\nNúmero telefónico de linea fija: %s", getLandlinePhoneNumber());
 		System.out.printf("\nNúmero de teléfono móvil: %s", getMobilPhoneNumber());

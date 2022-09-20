@@ -3,9 +3,11 @@ package ui;
 import dol.SavingsAccount;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Scanner;
 
 import misc.BalanceCatcher;
+import misc.DateOperator;
 import misc.ExceptionScanner;
 import dol.Currency;
 import dol.CurrentAccount;
@@ -66,6 +68,10 @@ public class FormAccount {
 		
 		System.out.print("Segundo apellido del titular: ");
 		ca.setHolderSecondSurname(sc.next());
+		
+		Date date = DateOperator.catchValidDate(sc, "Fecha de nacimiento (dd/MM/yyyy): ");
+		ca.setBirthDate(date);
+		
 		
 		System.out.print("Cédula del titular: ");
 		ca.setHolderID(sc.next());
@@ -134,6 +140,9 @@ public class FormAccount {
 		
 		System.out.print("Segundo apellido del titular: ");
 		sa.setHolderSecondSurname(sc.next());
+		
+		Date date = DateOperator.catchValidDate(sc, "Fecha de nacimiento (dd/MM/yyyy): ");
+		sa.setBirthDate(date);
 		
 		System.out.print("Cédula del titular: ");
 		sa.setHolderID(sc.next());
