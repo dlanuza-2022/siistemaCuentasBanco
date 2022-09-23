@@ -72,6 +72,13 @@ public class FormAccount {
 		Date date = DateOperator.catchValidDate(sc, "Fecha de nacimiento (dd/MM/yyyy): ");
 		ca.setBirthDate(date);
 		
+		ca.setAge(DateOperator.getAge(ca.getBirthDate()));
+		
+		if(ca.getAge() < 16) {
+			System.out.println("Los menores de dieciséis no pueden abir una cuenta bancaria." );
+			AddAccountMenu priorMenu = new AddAccountMenu();
+			priorMenu.show();
+		}
 		
 		System.out.print("Cédula del titular: ");
 		ca.setHolderID(sc.next());
@@ -144,7 +151,15 @@ public class FormAccount {
 		Date date = DateOperator.catchValidDate(sc, "Fecha de nacimiento (dd/MM/yyyy): ");
 		sa.setBirthDate(date);
 		
-		System.out.print("Cédula del titular: ");
+        sa.setAge(DateOperator.getAge(sa.getBirthDate()));
+		
+		if(sa.getAge() < 16) {
+			System.out.println("Los menores de dieciséis no pueden abir una cuenta bancaria." );
+			AddAccountMenu priorMenu = new AddAccountMenu();
+			priorMenu.show();
+		}
+		
+	    System.out.print("Cédula del titular: ");
 		sa.setHolderID(sc.next());
 		
 		System.out.print("Número telefónico de línea fija: ");

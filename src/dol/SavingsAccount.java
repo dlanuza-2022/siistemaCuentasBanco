@@ -23,10 +23,10 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 	
 
 	public SavingsAccount(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, Date birthDate, String holderID, int landlinePhoneNumber,
+			String holderSurname, String holderSecondSurname, Date birthDate, int age, String holderID, int landlinePhoneNumber,
 			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
 			String exactAddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
-		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, birthDate,
+		super(balance, accountNumber, holderFirstName, holderMiddleName, holderSurname, holderSecondSurname, birthDate, age,
 				holderID, landlinePhoneNumber, mobilPhoneNumber, holderDepartment, holderMunicipality, holderNeighborhood,
 				exactAddress, creationDate, currency, transactionHistory);
 		// TODO Auto-generated constructor stub
@@ -37,8 +37,17 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 
 
 
+	@Override
+	public int getAge() {
+		// TODO Auto-generated method stub
+		return super.getAge();
+	}
 
-
+	@Override
+	public void setAge(int age) {
+		// TODO Auto-generated method stub
+		super.setAge(age);
+	}
 
 
 	@Override

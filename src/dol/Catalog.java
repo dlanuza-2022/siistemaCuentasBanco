@@ -72,6 +72,22 @@ public class Catalog {
 	}
 	
 	
+	public void setSavingsAccount(SavingsAccount sa) {
+		this.savingsAccounts.add(sa);
+	}
+	
+	public void setCurrentAccount(CurrentAccount ca) {
+		this.currentAccounts.add(ca);
+	}
+	
+	
+	public SavingsAccount getSavingsAccount() {
+		//Hay que hacer el metodo para buscar
+	}
+	
+	public CurrentAccount getCurrentAccount() {
+		this.currentAccounts.add(ca);
+	}
 	
 	
 	/*

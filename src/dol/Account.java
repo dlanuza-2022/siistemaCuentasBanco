@@ -19,6 +19,8 @@ public abstract class Account {
 	
 	//Fecha de nacimiento del titular
 	private Date birthDate;
+	private int age;
+	
 	
 	//Cédula del titular de la cuenta.
 	private String holderID;
@@ -63,7 +65,7 @@ public abstract class Account {
 
 
 	public Account(double balance, long accountNumber, String holderFirstName, String holderMiddleName,
-			String holderSurname, String holderSecondSurname, Date birthDate, String holderID, int landlinePhoneNumber,
+			String holderSurname, String holderSecondSurname, Date birthDate, int age, String holderID, int landlinePhoneNumber,
 			int mobilPhoneNumber, String holderDepartment, String holderMunicipality, String holderNeighborhood,
 			String exactAddress, LocalDateTime creationDate, Currency currency, String transactionHistory) {
 		super();
@@ -74,6 +76,7 @@ public abstract class Account {
 		this.holderSurname = holderSurname;
 		this.holderSecondSurname = holderSecondSurname;
 		this.birthDate = birthDate;
+		this.age = age;
 		this.holderID = holderID;
 		this.landlinePhoneNumber = landlinePhoneNumber;
 		this.mobilPhoneNumber = mobilPhoneNumber;
@@ -247,6 +250,36 @@ public abstract class Account {
 	public abstract void withdrawMoney(double amount);
 		
 	public abstract void depositMoney(double amount);
+
+
+
+
+
+
+
+
+
+
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 	
 	
 	

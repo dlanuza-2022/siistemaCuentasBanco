@@ -25,10 +25,11 @@ public class EditMenu implements IMenu {
 			case 2:
 				break;
 			case 3:
-				break;
-			default:
 				EditOrDeleteAccountMenu priorMenu = new EditOrDeleteAccountMenu();
 				priorMenu.show();
+				break;
+			default:
+				System.out.println("Opción inválida.");
 				break;
 			
 			}
