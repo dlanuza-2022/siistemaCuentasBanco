@@ -72,21 +72,29 @@ public class Catalog {
 	}
 	
 	
-	public void setSavingsAccount(SavingsAccount sa) {
-		this.savingsAccounts.add(sa);
+	public void setSavingsAccount(SavingsAccount sa, int index) {
+		savingsAccounts.set(index, sa);
 	}
 	
-	public void setCurrentAccount(CurrentAccount ca) {
-		this.currentAccounts.add(ca);
+	public void setCurrentAccount(CurrentAccount ca, int index) {
+		currentAccounts.set(index, ca);
 	}
 	
 	
-	public SavingsAccount getSavingsAccount() {
-		//Hay que hacer el metodo para buscar
+	public SavingsAccount getSavingsAccount(int index) {
+		SavingsAccount sa = new SavingsAccount();
+		
+		sa = savingsAccounts.get(index);
+		
+		return sa;
 	}
 	
-	public CurrentAccount getCurrentAccount() {
-		this.currentAccounts.add(ca);
+	public CurrentAccount getCurrentAccount(int index) {
+        CurrentAccount ca = new CurrentAccount();
+		
+		ca = currentAccounts.get(index);
+		
+		return ca;
 	}
 	
 	
