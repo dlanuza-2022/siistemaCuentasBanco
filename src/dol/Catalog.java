@@ -2,8 +2,11 @@ package dol;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Catalog {
+    Scanner sc = new Scanner(System.in);
+	
 	private String bankName;
 	private List<CurrentAccount> currentAccounts;
 	private List<SavingsAccount> savingsAccounts;
@@ -81,23 +84,164 @@ public class Catalog {
 	}
 	
 	
-	public SavingsAccount getSavingsAccount(int index) {
-		SavingsAccount sa = new SavingsAccount();
+	public int getCurrentAccountsSize() {
 		
-		sa = savingsAccounts.get(index);
-		
-		return sa;
+		return currentAccounts.size();
 	}
 	
-	public CurrentAccount getCurrentAccount(int index) {
-        CurrentAccount ca = new CurrentAccount();
-		
-		ca = currentAccounts.get(index);
-		
-		return ca;
+    public int getSavingstAccountsSize() {
+	
+    	return savingsAccounts.size();
 	}
 	
+
+    public int getCurrentAccountIndex(long accountNumber) {
+	    int index = 0;
+     	
+     	for(int i = 0; i < currentAccounts.size(); i++) {
+ 			
+ 			if(savingsAccounts.get(i).getAccountNumber() == accountNumber) {
+ 				index = i;
+ 				
+ 			}
+ 			
+ 		}
+     	
+     	
+     	return index;
+    }
+
+    public int getSavingsAccountIndex(long accountNumber) {
+    	int index = 0;
+     	
+     	for(int i = 0; i < savingsAccounts.size(); i++) {
+ 			
+ 			if(savingsAccounts.get(i).getAccountNumber() == accountNumber) {
+ 				index = i;
+ 				
+ 			}
+ 			
+ 		}
+     	
+     	
+     	return index;
+    }
+
+    
+	//Metodos para buscar por numero de cuenta.
+	public SavingsAccount seekSavingsAccountByAccountNumber(long accountNumber) {
+        int index = 0;
+    	
+    	for(int i = 0; i < savingsAccounts.size(); i++) {
+			
+			if(savingsAccounts.get(i).getAccountNumber() == accountNumber) {
+				index = i;
+				
+			}
+			
+		}
+    	
+    	
+    	return savingsAccounts.get(index);
+	}
 	
+    public CurrentAccount seekCurrentAccountByAccountNumber(long accountNumber) {
+		
+    	int index = 0;
+    	
+    	for(int i = 0; i < currentAccounts.size(); i++) {
+			
+			if(currentAccounts.get(i).getAccountNumber() == accountNumber) {
+				index = i;
+				
+			}
+			
+		}
+    	
+    	
+    	return currentAccounts.get(index);
+    	
+		
+	}
+    
+    
+    //Metodos para validadr si una cuenta existe.
+    public boolean savingsAccountExists(long accountNumber) {
+    	boolean accountExists = false;
+    	
+         for(int i = 0; i < savingsAccounts.size(); i++) {
+			
+			if(savingsAccounts.get(i).getAccountNumber() == accountNumber) {
+				accountExists = true;
+				
+			}
+			
+		}
+    	
+    	return accountExists;
+    	
+    }
+	
+    public boolean currentAccountExists(long accountNumber) {
+    	boolean accountExists = false;
+    	
+        for(int i = 0; i < currentAccounts.size(); i++) {
+			
+			if(currentAccounts.get(i).getAccountNumber() == accountNumber) {
+				accountExists = true;
+				
+			}
+			
+		}
+    	
+    	return accountExists;
+    	
+    }
+	
+    
+    public int selectCurrentAccountByCatalog() {
+    	int index = 0;
+    	
+    	System.out.println();
+    	showCurrentAccountsAsAList();
+    	System.out.println();
+    	
+    	System.out.print("Ingrese el índice de la cuenta: ");
+    	index = sc.nextInt();
+        index = index - 1;
+    	
+    	return index;
+    }
+    
+    public int selectSavingsAccountByCatalog() {
+    	int index = 0;
+    	
+    	System.out.println();
+    	showSavingsAccountsAsAList();
+    	System.out.println();
+    	
+    	System.out.print("Ingrese el índice de la cuenta: ");
+    	index = sc.nextInt();
+        index = index - 1;
+    	
+    	return index;
+    }
+    
+   
+    public void setSavingsAccountByIndex(SavingsAccount sa, int index) {
+    	
+    	savingsAccounts.set(index, sa);
+    	
+    }
+    
+    public void setCurrentAccountByIndex(CurrentAccount ca, int index) {
+    	
+    	currentAccounts.set(index, ca);
+    	
+    }
+    
+    
+    
 	/*
 	 * Mostrar las cuentas como una tabla.
 	*/
@@ -115,6 +259,7 @@ public class Catalog {
 		System.out.println("===================================Cuentas corrientes===================================");
 		System.out.println("________________________________________________________________________________________\n");
 		for(int i=0; i<currentAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			currentAccounts.get(i).showDataAsForm();
 		}
 		
@@ -124,31 +269,34 @@ public class Catalog {
 		System.out.println("===================================Cuentas corrientes===================================");
 		System.out.println("________________________________________________________________________________________\n");
 		for(int i=0; i<savingsAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			savingsAccounts.get(i).showDataAsForm();
 		}
 		
 		
 	}
 	
-	//metodo para mostrar solo las cuentas corrientes.
+	//Metodo para mostrar solo las cuentas corrientes.
 	public void showCurrentAccountsAsATable() {
 		
 		System.out.println("________________________________________________________________________________________");
 		System.out.printf("\n              Listado de las cuentas corrientes del banco %s\n", bankName);
 		System.out.println("________________________________________________________________________________________");
 		for(int i=0; i<currentAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			currentAccounts.get(i).showDataAsForm();
 		}
 		
 	}
 	
 	//metodo para mostrar solo las cuentas de ahorros.
-	public void showSavingAccountsAsATable() {
+	public void showSavingsAccountsAsATable() {
 		
 		System.out.println("_______________________________________________________________________________________");
 		System.out.printf("\n               Listado de las cuentas de ahorro del banco %s\n", bankName);
 		System.out.println("_______________________________________________________________________________________");
 		for(int i=0; i<currentAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			currentAccounts.get(i).showDataAsForm();
 		}
 		
@@ -173,6 +321,7 @@ public class Catalog {
 		System.out.println("===================================Cuentas corrientes===================================");
 		System.out.println("________________________________________________________________________________________\n");
 		for(int i=0; i<currentAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			currentAccounts.get(i).showDataAsRow();
 		}
 		
@@ -182,6 +331,7 @@ public class Catalog {
 		System.out.println("===================================Cuentas corrientes===================================");
 		System.out.println("________________________________________________________________________________________\n");
 		for(int i=0; i<savingsAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			savingsAccounts.get(i).showDataAsRow();
 		}
 		
@@ -195,18 +345,20 @@ public class Catalog {
 		System.out.printf("\n              Listado de las cuentas corrientes del banco %s\n", bankName);
 		System.out.println("________________________________________________________________________________________");
 		for(int i=0; i<currentAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			currentAccounts.get(i).showDataAsRow();
 		}
 		
 	}
 	
 	//metodo para mostrar solo las cuentas de ahorros.
-	public void showSavingAccountsAsAList() {
+	public void showSavingsAccountsAsAList() {
 		
 		System.out.println("_______________________________________________________________________________________");
 		System.out.printf("\n               Listado de las cuentas de ahorro del banco %s\n", bankName);
 		System.out.println("_______________________________________________________________________________________");
 		for(int i=0; i<currentAccounts.size();i++) {
+			System.out.print((i+1) + ". ");
 			currentAccounts.get(i).showDataAsRow();
 		}
 		

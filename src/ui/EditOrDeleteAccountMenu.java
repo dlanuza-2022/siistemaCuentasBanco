@@ -19,6 +19,8 @@ Scanner sc = new Scanner(System.in);
 
 			switch(op) {
 			case 1:
+				EditMenu em = new EditMenu();
+				em.show();
 				
 				break;
 			case 2:
