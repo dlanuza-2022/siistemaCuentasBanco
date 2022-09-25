@@ -227,7 +227,10 @@ public class Application {
    }
    
    
-   
+   //metodo para aplicar la penalización.
+   public static void applyFees() {
+	   ctl.applyFees();
+   }
    
    
    

@@ -1,12 +1,24 @@
 package dol;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Catalog {
-    Scanner sc = new Scanner(System.in);
+public class Catalog implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+
+
+
+	Scanner sc = new Scanner(System.in);
 	
+    
+    
 	private String bankName;
 	private List<CurrentAccount> currentAccounts;
 	private List<SavingsAccount> savingsAccounts;
@@ -388,6 +400,16 @@ public class Catalog {
 		}
 		
 	}
+	
+	public void applyFees() {
+		
+		for(int i = 0; i < savingsAccounts.size(); i++) {
+			
+           savingsAccounts.get(i).lowBalanceFee();
+			
+		}
+	}
+	
 	
 	
 	

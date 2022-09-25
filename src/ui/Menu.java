@@ -44,7 +44,8 @@ public class Menu implements IMenu {
 				break;
 				
 			case 7:
-				
+				ApplyFeesMenu submenu7 = new ApplyFeesMenu();
+				submenu7.show();
 				break;
 			
 			case 8:

@@ -336,17 +336,7 @@ public class SavingsAccount extends Account implements IAccount, ISavingsAccount
 		
 	}
 	
-	
-	public void addInterest() {
-		//Necesito agregar varias fecha como constante y luego comparar la fecha de hoy.
-		
-		if(getCurrency() == Currency.CORDOVAS) {
-			
-		}else {
-			
-		}
-		
-	}
+
 	
 	
 	
