@@ -365,5 +365,32 @@ public class Catalog {
 		
 	}	
 		
+	
+	
+	
+	
+	
+	//Metodo para añadir interes
+	
+	public void interestAdder() {
+		
+		for(int i = 0; i < savingsAccounts.size(); i++) {
+			
+			if(savingsAccounts.get(i).getCurrency() == Currency.CORDOVAS) {
+				
+				savingsAccounts.get(i).setBalance(savingsAccounts.get(i).getBalance() * 1.01);
+			}else {
+				
+				savingsAccounts.get(i).setBalance(savingsAccounts.get(i).getBalance() * 1.0075);
+			}
+			
+			
+		}
+		
+	}
+	
+	
+	
+	
 
 }

@@ -30,12 +30,24 @@ public class Menu implements IMenu {
 				submenu3.show();
 				break;
 			case 4:
-				
+				SortAccountsMenu submenu4 = new SortAccountsMenu();
+				submenu4.show();
 				break;
 			case 5:
+				EditOrDeleteAccountMenu submenu5 = new EditOrDeleteAccountMenu();
+				submenu5.show();
 			
 				break;
 			case 6:
+				AddInterestMenu submenu6 = new AddInterestMenu();
+				submenu6.show();
+				break;
+				
+			case 7:
+				
+				break;
+			
+			case 8:
 				System.exit(0);
 				break;
 			default:
@@ -50,7 +62,7 @@ public class Menu implements IMenu {
 
 	@Override
 	public void displayOptions() {
-		System.out.println("====Menú de opciones====\n");
+		System.out.println("\n====Menú de opciones====\n");
 		
 		System.out.println("1. Depositar o retirar dinero.");
 		System.out.println("2. Agregar una nueva cuenta.");
@@ -58,7 +70,8 @@ public class Menu implements IMenu {
 		System.out.println("4. Ordenar cuentas por número de cuenta.");
 		System.out.println("5. Editar o eliminar una cuenta.");
 		System.out.println("6. Agregar interes a las cuentas de ahorro.");
-		System.out.println("7. Salir del programa.");
+		System.out.println("7. Penalizar las cuentas de ahorro con balance inferior al límite.");
+		System.out.println("8. Salir del programa.");
 		
 	}
 	

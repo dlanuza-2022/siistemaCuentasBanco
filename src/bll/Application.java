@@ -214,4 +214,21 @@ public class Application {
 	
 	   return ctl.seekSavingsAccountByAccountNumber(accountNumber);
    }
+   
+   
+   
+   
+   
+   
+   //Metodo para añadir interest
+   public static void interestAdder() {
+	   ctl.interestAdder();
+	   
+   }
+   
+   
+   
+   
+   
+   
 }
