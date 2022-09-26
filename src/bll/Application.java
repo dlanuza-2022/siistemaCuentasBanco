@@ -230,7 +230,40 @@ public class Application {
    //metodo para aplicar la penalización.
    public static void applyFees() {
 	   ctl.applyFees();
+	   
    }
+   
+   
+   
+   
+  //Metodos para depositar y retirar dinero
+   
+   public static void depositInSA(int index, long amount) {
+	   
+	   ctl.depositInSA(index, amount);
+   }
+   
+   
+ public static void depositInCA(int index, long amount) {
+	   
+	  ctl.depositInCA(index, amount);
+   }
+   
+ public static void withdrawFromSA(int index, long amount) {
+	   
+	 ctl.withdrawFromSA(index, amount);
+ }
+ 
+ public static void withdrawFromCA(int index, long amount) {
+	   
+	 ctl.withdrawFromCA(index, amount);
+	 
+ }
+ 
+   
+   
+   
+   
    
    
    

@@ -411,8 +411,28 @@ public class Catalog implements Serializable {
 	}
 	
 	
+	public void withdrawFromSA(int index, long amount) {
+		
+		savingsAccounts.get(index).withdrawMoney(amount);
+		
+	}
 	
-	
+	public void withdrawFromCA(int index, long amount) {
+		
+		currentAccounts.get(index).withdrawMoney(amount);
+		
+	}
 	
 
+	public void depositInSA(int index, long amount) {
+		
+		savingsAccounts.get(index).depositMoney(amount);
+		
+	}
+	
+    public void depositInCA(int index, long amount) {
+		
+    	currentAccounts.get(index).depositMoney(amount);
+    	
+	}
 }
