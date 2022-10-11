@@ -379,6 +379,42 @@ public class Catalog implements Serializable {
 		
 	
 	
+	//Metodos para eliminar
+	 public void removeCurrent(long accountNumber) {
+			
+		   int index =0;
+		  	
+		  	for(int i = 0; i < currentAccounts.size(); i++) {
+					
+					if(currentAccounts.get(i).getAccountNumber() == accountNumber) {
+						currentAccounts.remove(i);
+					}
+					
+				}
+		  	
+				
+			}
+	 
+	 
+		  public void  removeSavings(long accountNumber) {
+			     int index = 0;
+			    	
+			    	for(int i = 0; i < savingsAccounts.size(); i++) {
+						
+						if(savingsAccounts.get(i).getAccountNumber() == accountNumber) {
+							savingsAccounts .remove(i);
+							
+						}
+						
+					}
+			    	
+			    	
+			    	
+				}
+	
+	
+	
+	
 	
 	
 	
@@ -411,26 +447,26 @@ public class Catalog implements Serializable {
 	}
 	
 	
-	public void withdrawFromSA(int index, long amount) {
+	public void withdrawFromSA(int index, double amount) {
 		
 		savingsAccounts.get(index).withdrawMoney(amount);
 		
 	}
 	
-	public void withdrawFromCA(int index, long amount) {
+	public void withdrawFromCA(int index, double amount) {
 		
 		currentAccounts.get(index).withdrawMoney(amount);
 		
 	}
 	
 
-	public void depositInSA(int index, long amount) {
+	public void depositInSA(int index, double amount) {
 		
 		savingsAccounts.get(index).depositMoney(amount);
 		
 	}
 	
-    public void depositInCA(int index, long amount) {
+    public void depositInCA(int index, double amount) {
 		
     	currentAccounts.get(index).depositMoney(amount);
     	

@@ -68,7 +68,21 @@ public class Application {
 	}
 	
 	
-	
+    
+    
+    public static void removeElement(long accountNumber) {
+ 	   
+  	  
+    	ctl.removeCurrent(accountNumber);
+    	   
+    	   
+    	   
+       }
+       public static void removeElement2(long accountNumber) {
+    	  
+       ctl.removeSavings(accountNumber);
+       }
+       
 	
 	
 	
@@ -238,23 +252,23 @@ public class Application {
    
   //Metodos para depositar y retirar dinero
    
-   public static void depositInSA(int index, long amount) {
+   public static void depositInSA(int index, double amount) {
 	   
 	   ctl.depositInSA(index, amount);
    }
    
    
- public static void depositInCA(int index, long amount) {
+ public static void depositInCA(int index, double amount) {
 	   
 	  ctl.depositInCA(index, amount);
    }
    
- public static void withdrawFromSA(int index, long amount) {
+ public static void withdrawFromSA(int index, double amount) {
 	   
 	 ctl.withdrawFromSA(index, amount);
  }
  
- public static void withdrawFromCA(int index, long amount) {
+ public static void withdrawFromCA(int index, double amount) {
 	   
 	 ctl.withdrawFromCA(index, amount);
 	 

@@ -4,16 +4,16 @@ import java.util.Scanner;
 import java.lang.IllegalArgumentException;
 
 public class BalanceCatcher {
-	Scanner sc = new Scanner(System.in);
-	
+	static Scanner sc = new Scanner(System.in);
+	static double amount = 0;
+	static long wholePart = 0;
+	static double cents = 0;
 	//Obtener un balance correcto.
 	
 	//Debo convertir los misc a staticos para ahorrar memoria.
 	
-	public double catchAmount() {
-		double amount = 0;
-		long wholePart = 0;
-		double cents = 0;
+	public static double catchAmount() {
+	
 		
 		
 		do {

@@ -9,7 +9,7 @@ public abstract class Account {
 	//Saldo de la cuenta.
 	private double balance;
 	//Número de la cuenta.
-	private long accountNumber;
+	protected long accountNumber;
 	
 	//Nombre del titular de la cuenta.
 	private String holderFirstName;
