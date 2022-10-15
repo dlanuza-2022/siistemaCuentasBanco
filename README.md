@@ -34,7 +34,16 @@ Docente: Ing. William Lopéz.
 
 Explicación del programa.
 
-1. 
+Sistema de administracion de cuentas bancarias.
+CRUD con CLI en consola.
+
+
+
+
+
+
+
+Nota: "Yo Dorian Lanuza le doy gracias a Dios por la oportunidad de estudiar, y por la sabiduría que me da para realizar cada programa."
 
 
 
